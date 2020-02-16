@@ -25,6 +25,12 @@ The intensity or brightness of the colour is described by value. Value ranges fr
 
 The process of describing a colour is simplified in the HSV colour space, as theoretically only the hue component of the space needs to be transformed to capture any colour.
 
+![rgb_lane](https://user-images.githubusercontent.com/60957986/74598638-2126f200-508e-11ea-8a6b-d441a77be21a.PNG)
+
+
+![hsv_lane](https://user-images.githubusercontent.com/60957986/74598647-4ddb0980-508e-11ea-9514-001e8d9e29a7.PNG)
+
+
 Once the image is in HSV, the bluesish colours will need to be lifted from the image. This is done by specifying a range of the color blue. In Hue color space, the blue color is in about 120–300 degrees range, on a 0–360 degrees scale. You can specify a tighter range for blue, say 180–300 degrees, but it doesn’t matter too much.
 
 
@@ -58,10 +64,9 @@ accumuIator is created to hoId the two vaIues and is set to zero initiaIIy. The 
 angles is to be one degree. The diagonaI Iength of the image is the maximum Iength possibIe for rho. So, the diagonaI Iength of the image is taken for 1 degree accuracy. Consider an image with a horizontaI Iine at the middIe 100x100 pixel density. The first
 point on the line is taken. Substitute the values of theta from 0 to 180 in the line equation. The value of the accumulator is incremented by one for every (rho, theta) pair, in the corresponding (rho, theta) cells. The (50,90) cell in the accumulator will now be equal to one.
 
-Upon moving on to the second point in the line, the value in the ceIIs corresponding to (p, theta) are incremented. Hence, the value in
-the cell (50,90) will now be equal to two. This process is repeated for every subsequent point on the Iine. Each time, the vaIue in the
-cell (50,90) wiII be incremented whiIe the other cells need not necessariIy increase. In the end of this process, the (50,90) will have
-the highest value. Upon searching for the maximum value in the accumulator, the cell (50,90) will be returned, indicating there is a
-line at a distance 50 form the image at an and of 90 degree.
+Upon moving on to the second point in the line, the value in the ceIIs corresponding to (p, theta) are incremented. Hence, the value in the cell (50,90) will now be equal to two. This process is repeated for every subsequent point on the Iine. Each time, the vaIue in the cell (50,90) wiII be incremented whiIe the other cells need not necessariIy increase. In the end of this process, the (50,90) will have the highest value. Upon searching for the maximum value in the accumulator, the cell (50,90) will be returned, indicating there is a line at a distance 50 form the image at an and of 90 degree.
+
+![lane_line](https://user-images.githubusercontent.com/60957986/74598661-8844a680-508e-11ea-9c22-9c6cdd2b42a3.PNG)
+
 
 
